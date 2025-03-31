@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "GPT Blue Badge Remover",
+    "version": "1",
+    "description": "Removes the annoying blue badge from ChatGPT's sidebar ^_^",
+    "permissions": ["activeTab"],
+    "icons": {
+      "24": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    },
+    "action": {
+      "default_icon": "icon.png",
+      "default_popup": "options.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://chat.openai.com/*", "https://chatgpt.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ]
+  }
